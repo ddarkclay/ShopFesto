@@ -1,0 +1,113 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Shop Festo Tracker {% endblock %}
+{% block css %}
+<style>
+    footer {
+    margin-top: 400px;
+}
+</style>
+{% endblock %}
+{% block body%}
+<div class="container my-3">
+    <div class="col my-5">
+        <h2>Enter Order Id and Email - Track Your Products</h2>
+        <form method="post" action="#" id="trackerForm"> {% csrf_token %}
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputorderId">Order Id</label>
+                    <input type="text" class="form-control" name="orderId" id="orderId" placeholder="Order Id">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputEmail">Email</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="Email">
+                </div>
+                <button type="submit" style="width: 150px;" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 my-2 cart">Track Order</button>
+            </div>
+        </form>
+    </div>
+    <div class="col my-4" id="order_status">
+        <h2 class="mt-4 mb-2">Your Order Status</h2>
+        <div class="my-4">
+            <ul class="list-group" id="items">
+                Enter your Order Id and Email , Click Track Order to Find details about your order !
+            </ul>
+        </div>
+        <h2 class="mt-5 mb-3">Your Order Details</h2>
+        <div class="mb-5">
+            <ul class="list-group" id="details">
+                Your Order Details are Here
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js%}
+<script>
+$('#order_status').hide();
+$('#pop_dropdown').hide();
+$('#trackerForm').submit(function(event) {
+    $('#items').empty();
+    $('#details').empty();
+    // $('#order_status').show();
+    $('#order_status').slideDown(700);
+    $('footer').css('margin-top', '50px');
+    var formData = {
+        'orderId': $('input[name=orderId]').val(),
+        'email': $('input[name=email]').val(),
+        'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val()
+    };
+
+    $.ajax({
+            type: 'POST',
+            url: '/shop/tracker/',
+            data: formData,
+            encode: true
+        })
+
+        .done(function(data) {
+            console.log(data)
+            data = JSON.parse(data);
+            if (data['status'] == 'success') {
+                updates = data['updates'];
+                for (i = 0; i < updates.length; i++) {
+                    let text = updates[i]['text'];
+                    let time = updates[i]['time'];
+                    // var hour = ${time.slice(0,10)};
+                    // console.log(hour);
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${text}
+                    <span>${time.slice(0,10)} &nbsp&nbsp ${time.slice(11,19)}</span>
+                </li>`
+                    $('#items').append(mystr);
+                }
+                // Fill in the order details
+                cart = JSON.parse(data['itemJson']);
+                console.log(cart);
+                for (item in cart) {
+                    let name = cart[item][1];
+                    let qty = cart[item][0];
+                    mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${name}
+                    <span class="badge badge-primary badge-pill">${qty}</span>
+                </li>`
+                    $('#details').append(mystr);
+                }
+            } else {
+                orderId = $('#orderId').val();
+                email = $('#email').val();
+                mystr = `<li class="list-group-item d-flex justify-content-between align-items-center">
+                    Sorry, We are not able to fetch this order id and email. Make sure to type 
+                    correct order id and email</li>`
+                $('#items').append(mystr);
+                mystr = `<li class="list-group-item d-flex align-items-center">
+                    No Order for this <b class=mx-2> ${orderId} </b> Order Id and email<b class=mx-2> ${email}</b></li>`
+                $('#details').append(mystr);
+            }
+
+
+        });
+    event.preventDefault();
+
+});
+</script>
+{% endblock%}

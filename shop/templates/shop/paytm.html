@@ -1,0 +1,41 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Shop Festo Tracker {% endblock %}
+{% load static %}
+{% block body %}
+<div class="container" style="padding: 70px 200px 300px 200px">
+    <div class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-secondary" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-success" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-danger" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-warning" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <div class="spinner-border text-dark" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+    <h1 class="my-3">Redirecting you to the merchant....</h1>
+    <h1>Please do not refresh your page....</h1>
+    <form action="https://securegw-stage.paytm.in/theia/processTransaction" method="post" name="paytm">
+        {% for key, value in param_dict.items %}
+        <input type="hidden" name="{{key}}" value="{{value}}">
+        {% endfor %}
+    </form>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{%static 'shop/js/basic_cart.js' %}"></script>
+<script>
+document.paytm.submit()
+</script>
+{% endblock %}

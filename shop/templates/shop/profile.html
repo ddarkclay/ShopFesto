@@ -1,0 +1,17 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Login {% endblock %}
+{% load static %}
+{% block css %}
+<style>
+</style>
+{% endblock %}
+{% block body%}
+<div class="container">
+    <div class="login-form my-5">
+        <h1>Hello {{user.first_name}}</h1>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{%static 'shop/js/basic_cart.js' %}"></script>
+{% endblock %}

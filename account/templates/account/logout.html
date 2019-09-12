@@ -1,0 +1,23 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Logout {% endblock %}
+{% block css %}
+<style>
+</style>
+{% endblock %}
+{% block body%}
+<div class="container">
+    <div class="login-form my-5">
+        <h2 class="text-center">Member Logout</h2>
+        <div class="border-top pt-3">
+            <small class="text-muted">
+                <a href="{% url 'Login' %}">Log In Again</a>
+            </small>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block js %}
+<script>
+$('#pop_dropdown').hide();
+</script>
+{% endblock %}

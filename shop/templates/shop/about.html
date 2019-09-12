@@ -1,0 +1,45 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Shop Festo {% endblock %}
+{% block body %}
+{% load static %}
+<!-- Title Page -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style='background-image: url("{% static "shop/images/about-us.jpg" %}");'>
+    <h2 class="l-text2 t-center">
+        About Us
+    </h2>
+</section>
+<!-- content page -->
+<section class="bgwhite p-t-66 p-b-38">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 p-b-30">
+                <div class="hov-img-zoom">
+                    <img src="{%static 'shop/images/about-us1.png' %}" alt="IMG-ABOUT">
+                </div>
+            </div>
+            <div class="col-md-8 p-b-30">
+                <h3 class="m-text26 p-t-15 p-b-16">
+                    Our story
+                </h3>
+                <p class="p-b-28">
+                    About Shop Festo – India’s Ultimate Online Shopping Site Shop Festo’s vision is to create India’s most reliable and frictionless commerce ecosystem that creates life-changing experiences for buyers and sellers. In February 2010, Kunal Bahl along with Rohit Bansal, started Shop Festo.com - India’s largest online shopping marketplace, with the widest assortment of 35 million plus products across 800 plus diverse categories from over 125,000 regional, national, and international brands and retailers. With millions of users and more than 300,000 sellers, Shop Festo is the online shopping site for Internet users across the country, delivering to 6000+ cities and towns in India. In its journey till now, Shop Festo has partnered with several global marquee investors and individuals such as SoftBank, BlackRock, Temasek, Foxconn, Alibaba, eBay Inc., Premji Invest, Intel Capital, Bessemer Venture Partners, Mr. Ratan Tata, among others. Online Shopping – A Boon The trend of online shopping is becoming a household name and so is Shop Festo. Shop Festo is the preferred choice of hundreds of thousands of online shoppers given its mammoth assortment of 15 million+ products, quick delivery even to the remotest corners of the country, and daily deals, discounts & offers to make products available at slashed down prices to our valuable customers. Get Started! Shop Online Today at Shop Festo If you have been missing out on all the fun of online shopping thinking it requires one to be a technology aficionado then we have good news for you. Shopping online particularly at Shop Festo is a child’s play; all you need is a mobile phone or laptop or tablet with Internet connection to get started. Simply log into Shop Festo.com and browse through the wide assortment of products across categories. Once you have zeroed in on your favorite products, simply place the order by filling in the details; the products will be delivered right at your doorstep. Fulfill Your Entrepreneurial Dreams! Sell Today at Shop Festo Thanks to easy-to-understand, flexible policies and SD Advisors to help sellers at each step, anyone from a manufacturer to wholesaler to retailer can sell on Shop Festo. Begin your entrepreneurial journey with Shop Festo as a seller by filling a simple registration form here. Once the registration process is done, you can start selling your products to the entire country by sitting at your home or office. Doesn't it sound thrilling? Of course, it is and the excitement will build up with every order you receive! Start selling at Shop Festo today and see your business reach staggering heights.
+                </p>
+                <div class="bo13 p-l-29 m-l-9 p-b-10">
+                    <p class="p-b-11">
+                        Shop on the Go – Install Shop Festo App Today! You can shop for your favourite products at Shop Festo even on the go using Shop Festo App. Available for both Android and Apple users, the app can be downloaded from Google Play Store and Apple App Store respectively. The app is quick, user-friendly, and enables shoppers buy products with a breeze. What's more, get timely notifications on your phone or tablet so that you don't miss amazing deals and offers. Download the app right now and experience how fun it is to shop on your mobile!
+                    </p>
+                    <span class="s-text7">
+                        - Steve Job’s
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{%static 'shop/js/basic_cart.js' %}"></script>
+<script>
+$('#pop_dropdown').hide();
+</script>
+{% endblock %}

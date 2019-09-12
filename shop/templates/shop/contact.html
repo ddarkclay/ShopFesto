@@ -1,0 +1,69 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Shop Festo {% endblock %}
+{% block body %}
+{% load static %}
+<!-- Title Page -->
+<section class="bg-title-page p-t-40 p-b-50 flex-col-c-m" style='background-image: url("{% static "shop/images/contactus-1.jpg" %}");'>
+    <h2 class="l-text2 t-center">
+        Contact
+    </h2>
+</section>
+<!-- content page -->
+<section class="bgwhite p-t-66 p-b-60">
+    <div class="container">
+        <form action="/shop/contact/" method="post">{% csrf_token %}
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name ">
+            </div>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your Email ">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" class="form-control" id="phone" name="phone" placeholder="">
+            </div>
+            <div class="form-group">
+                <label for="message">Message </label>
+                <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+            </div>
+            <div class="g-recaptcha" data-sitekey="6Lc6WK0UAAAAAMtePGOUi1dHk6ZZqtJgCtMDrrC9"></div>
+            <button id="submit_btn" type="submit" data-toggle="modal" data-target="#mymodel" class="mt-5 p-2 flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 trans-0-4">
+                Submit
+            </button> 
+        </form>
+        <!-- Modal -->
+        <!-- <div class="modal fade" id="mymodel" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalCenterTitle">Contact Success</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        Thank for Contact Us. We Connect you as soon as Possible.
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" data-dismiss="modal">Ok</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+    </div>
+</section>
+{% endblock %}
+
+{% block js %}
+<script type="text/javascript" src="{%static 'shop/js/basic_cart.js' %}"></script>
+<script>
+$('#pop_dropdown').hide();
+{% if thanks %}
+    alert('Thank for Contact Us. We Connect you as soon as Possible');
+    document.location = "/shop/contact";
+    // $('#submit_btn').click();
+{% endif %}
+</script>
+{% endblock %}

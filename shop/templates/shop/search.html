@@ -1,0 +1,85 @@
+{% extends 'shop/basic.html' %}
+{% block title %} Shop Festo {% endblock %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" type="text/css" href="{%static 'shop/css/index.css' %}">
+{% endblock %}
+{% block body %}
+<!-- New Product -->
+<!-- <section class=""> -->
+<section>
+    <div class="container">
+        <!--Slideshow starts here -->
+        {% for product, range, nSlides in allProds %}
+        <h3 id="category">{{product.0.category}}</h3>
+        <div class="row">
+            <div id="demo{{forloop.counter}}" class="col carousel slide my-3" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#demo{{forloop.counter}}" data-slide-to="0" class="active"></li>
+                    {% for i in range %}
+                    <li data-target="#demo{{forloop.parentloop.counter}}" data-slide-to="{{i}}"></li>
+                    {% endfor %}
+                </ol>
+                <div class="carousel-inner">
+                    <div class="item carousel-item active">
+                        {% for i in product %}
+                        <div class="col-xs-3 col-sm-3 col-md-3">
+                            <div class="thumb-wrapper">
+                                <div class="img-box">
+                                    <img src="/media/{{i.image}}" class="img-responsive img-fluid" alt="">
+                                </div>
+                                <div class="thumb-content">
+                                    <a href="/shop/products/{{i.product_id}}">
+                                        <h4 id="namepr{{i.product_id}}">{{i.product_name|slice:"0:32"}} ...</h4>
+                                    </a>
+                                    <p class="item-price"><strike>₹{{i.old_price}}</strike> ₹<span id="pricepr{{i.product_id}}">{{i.new_price}}</span></p>
+                                    <div class="star-rating">
+                                        <ul class="list-inline">
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                        </ul>
+                                    </div>
+                                    <span id="divpr{{i.product_id}}" class="divpr">
+                                        <button id="pr{{i.product_id}}" style="width: 150px;" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 mx-4 my-2 cart">Add to Cart</button>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        {% if forloop.counter|divisibleby:4 and forloop.counter > 0 and not forloop.last %}
+                    </div>
+                    <div class="item carousel-item">
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <!-- left and right controls for the slide -->
+            <!-- <a class="carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a> -->
+            <a class="carousel-control left carousel-control-prev" href="#demo{{forloop.counter}}" data-slide="prev">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <a class="carousel-control right carousel-control-next" href="#demo{{forloop.counter}}" data-slide="next">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+
+{% endblock %}
+{% block js %}
+<script type="text/javascript" src="{%static 'shop/js/index.js' %}"></script>
+<script>
+{% if msg|length != 0 %}
+alert('{{msg}}');
+window.location.href = "/" 
+{% endif %}
+{% endblock %}

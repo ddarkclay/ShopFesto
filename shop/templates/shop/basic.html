@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %} {% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% load static %}
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="{%static 'shop/images/icons/favicon.png' %}" />
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/bootstrap/css/bootstrap.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/fonts/themify/themify-icons.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/fonts/Linearicons-Free-v1.0.0/icon-font.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/fonts/elegant-font/html-css/style.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/animate/animate.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/css-hamburgers/hamburgers.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/animsition/css/animsition.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/select2/select2.min.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/daterangepicker/daterangepicker.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/slick/slick.css' %}">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/vendor/lightbox2/css/lightbox.min.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/css/util.css' %}">
+    <link rel="stylesheet" type="text/css" href="{%static 'shop/css/main.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <style>
+        .wrap_header {
+        background-color: #262626;
+    }
+    .main_menu > li > a {
+        font-size: 18px;
+        color: #ffffff;
+    }
+    .main_menu > li:hover > a {
+        font-size: 20px;
+        color: #e65540;
+    }
+    .topbar-email, .topbar-child1 {
+        color: #010101;
+    }
+    .bg6 {
+        background-color: #262626;
+    }
+    .s-text7, .s-text8, .s-text8 a {
+        color: #fff;
+    }
+    .s-text12 {
+        color: #fff;
+    }
+    .header-cart-item-name {
+        display: ruby;
+    }
+    .num {
+        margin-right: 10px;
+        font-size: 20px;
+        color: red;
+    }
+    .logo {
+        color: #fff;
+    }
+    .logo:hover {
+        color: #e65540;
+    }
+    .login_btn {
+        width: 100%;
+        background: #c0392b !important;
+        color: white !important;
+    }
+    .login_btn:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .input-group-text {
+        background: #262626 !important;
+        color: white !important;
+        border: 0 !important;
+        border-radius: 0.25rem 0 0 0.25rem !important;
+    }
+    .input_user,
+    .input_pass:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .search:focus {
+        box-shadow: none !important;
+        outline: 0px !important;
+    }
+    .wrap_header_mobile {
+        background-color: #262626;
+    }
+    .logo-mobile {
+        color: #fff;
+    }
+    .side-menu .main-menu > li > a {
+        padding-left: 0px;
+    }
+    .side-menu .main-menu > li > a:hover {
+        color: #e65540;
+        font-size: 20px;
+    }
+    .item-menu-mobile {
+        background-color: #262626;
+    }
+    .header1 {
+        height: 100px;
+    }
+</style>
+    <!-- Internal Css -->
+    {% block css %} {% endblock %}
+    <!--===============================================================================================-->
+</head>
+
+<body class="animsition">
+    <!-- Header -->
+    <header class="header1">
+        <!-- Header desktop -->
+        <div class="container-menu-header">
+            <div class="topbar">
+                <div class="topbar-social">
+                    <a href="#" class="topbar-social-item fab fa-facebook-f"></a>
+                    <a href="#" class="topbar-social-item fab fa-instagram"></a>
+                    <a href="#" class="topbar-social-item fab fa-pinterest-p"></a>
+                    <a href="#" class="topbar-social-item fab fa-snapchat-ghost"></a>
+                    <a href="#" class="topbar-social-item fab fa-youtube"></a>
+                    <a href="#" class="topbar-social-item fab fa-github"></a>
+                </div>
+                <span class="topbar-child1">
+                    India's First Popular Online Shopping Site
+                </span>
+                <div class="topbar-child2">
+                    <a href="#" class="topbar-email mx-5">
+                        <h6>Help</h6>
+                    </a>
+                    <span class="topbar-email">
+                        shop_festo@email.com
+                    </span>
+                    <div class="topbar-language rs1-select2">
+                        <select class="selection-1" name="time">
+                            <option>INR</option>
+                            <option>USD</option>
+                            <option>EUR</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="wrap_header">
+                <!-- Logo -->
+                <a href="/shop" class="logo">
+                    <!-- Logo Image -->
+                    <!-- <img src="images/icons/logo.png" alt="IMG-LOGO"> -->
+                    <h2><b style="font-family: Montserrat-Regular !important">Shop Festo</b></h2>
+                </a>
+                <!-- Menu -->
+                <div class="wrap_menu">
+                    <nav class="menu">
+                        <ul class="main_menu">
+                            <li>
+                                <a href="/shop">Home</a>
+                                <!-- <ul class="sub_menu">
+                                    <li><a href="index.html">Homepage V1</a></li>
+                                    <li><a href="home-02.html">Homepage V2</a></li>
+                                    <li><a href="home-03.html">Homepage V3</a></li>
+                                </ul> -->
+                            </li>
+                            <li class="sale-noti">
+                                <a href="/shop/sale">Sale</a>
+                            </li>
+                            <li>
+                                <a href="/shop/tracker">Tracker</a>
+                            </li>
+                            <li>
+                                <a href="/shop/about">About</a>
+                            </li>
+                            <li>
+                                <a href="/shop/contact">Contact</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <!-- Header Icon -->
+                <div class="header-icons">
+                    <!-- <a href="#" class="header-wrapicon1 dis-block">
+                        <a href="#"><h3><span class="header-icon1 js-show-header-dropdown"><i class="fas fa-search mx-5" style="color: #fff"></i></span></h3></a>
+                    </a> -->
+                    <div class="header-wrapicon2 mx-2">
+                        <span id="search_btn" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h3><i class="fas fa-search" style="color: #fff"></i></h3>
+                        </span>
+                        <!-- <h3><i class="fab fa-opencart header-icon1 js-show-header-dropdown" style="color: #fff"></i></h3> -->
+                        <!-- Header cart noti -->
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12 ">
+                                <form method="get" action="/shop/search/" class="navbar-form navbar-right" role="search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control search" placeholder="Search" name="search" id="search">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    {% if user.is_authenticated %}
+                    <div class="header-wrapicon2 mx-3">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h5 class="" style="color: #fff">Hello {{user.first_name}}</h5>
+                        </span>
+                        <!-- <h3><i class="fab fa-opencart header-icon1 js-show-header-dropdown" style="color: #fff"></i></h3> -->
+                        <!-- Header cart noti -->
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12 ">
+                                <b>Welcome</b>
+                                <h4>{{user.first_name}} {{user.last_name}}</h4>
+                                <hr>
+                                <b>Your Email</b>
+                                <h6>{{user.email}}</h6>
+                                <!-- <a href="{% url 'Logout' %}">
+                                    <div class="d-flex justify-content-center mt-3 login_container">
+                                        <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 my-2 cart">Log Out</button>
+                                    </div>
+                                </a> -->
+                                <div class="header-cart-buttons mt-4">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="{%url 'Logout'%}"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Logout
+                                            </button></a>
+                                    </div>
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="/shop/profile"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Profile
+                                            </button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <li class="nav-item">
+                        <div class="nav-link" style="color: red">Hello {{user.first_name}}</div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/account/logout">Logout</a>
+                    </li> -->
+                    {% else %}
+                    <div class="header-wrapicon2 mx-2">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h3><i class="fas fa-user" style="color: #fff"></i></h3>
+                        </span>
+                        <!-- <h3><i class="fab fa-opencart header-icon1 js-show-header-dropdown" style="color: #fff"></i></h3> -->
+                        <!-- Header cart noti -->
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12 ">
+                                <div class="user_card">
+                                    <div class="d-flex justify-content-center form_container">
+                                        <form method="post" action="/account/login/">{% csrf_token %}
+                                            <!-- <div class="justify-content-center float-center">Sign In</div> -->
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                </div>
+                                                <input type="text" name="username" id="username" class="form-control input_user" required="required" placeholder="username">{%if error == "userpass"%}<span class="text-danger">{{msg}}</span>{% endif %}
+                                            </div>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                </div>
+                                                <input type="password" name="password" class="form-control input_pass" id="password" required="required" placeholder="password">{%if error == "password"%}<span class="text-danger">{{msg}}</span>{% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-3 login_container">
+                                                <button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 my-2 cart">Sign In</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-center links">
+                                            Don't have an account? <a href="{% url 'Register' %}" class="ml-2">Sign Up</a>
+                                        </div>
+                                        <div class="d-flex justify-content-center links">
+                                            <a href="#">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <!-- <a href="#" class="header-wrapicon1 dis-block">
+                        <a href="#">
+                            <h3><i class="fas fa-user" style="color: #fff"></i></h3>
+                        </a>
+                    </a> -->
+                    <span class="linedivide1"></span>
+                    <div class="header-wrapicon2">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h3><i class="fab fa-opencart" style="color: #fff"></i></h3>
+                        </span>
+                        <!-- <h3><i class="fab fa-opencart header-icon1 js-show-header-dropdown" style="color: #fff"></i></h3> -->
+                        <span class="header-icons-noti ">
+                            <h5 id="cart"></h5>
+                        </span>
+                        <!-- Header cart noti -->
+                        <div class="header-cart header-dropdown" id="pop_dropdown">
+                            <ul class="header-cart-wrapitem">
+                                <li class="header-cart-item" id="popcart">
+                                </li>
+                            </ul>
+                            <div id="total_amount" class="header-cart-total">
+                            </div>
+                            <div class="header-cart-buttons">
+                                <div class="header-cart-wrapbtn">
+                                    <!-- Button -->
+                                    <button id="clear_cart" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        Clear Cart
+                                    </button>
+                                </div>
+                                <div class="header-cart-wrapbtn">
+                                    <!-- Button -->
+                                    <a href="/shop/checkout"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            Check Out
+                                        </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Header Mobile -->
+        <div class="wrap_header_mobile float-center">
+            <!-- Logo moblie -->
+            <a href="/shop" class="logo-mobile">
+                <h4><b>Shop Festo</b></h4>
+            </a>
+            <!-- Button show menu -->
+            <div class="btn-show-menu">
+                <!-- Header Icon mobile -->
+                <div class="header-icons-mobile">
+                    <!-- Search Icon -->
+                    <div class="header-wrapicon2 mr-3">
+                        <span id="search_btn_mobile" class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h4><i class="fas fa-search" style="color: #fff"></i></h4>
+                        </span>
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12 ">
+                                <form method="get" action="/shop/search/" class="navbar-form navbar-right" role="search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control search" placeholder="Search" name="search" id="search_mobile">
+                                        <div class="input-group-btn">
+                                            <button class="btn btn-danger" type="submit"><i class="fas fa-search"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- User Icon -->
+                    {% if user.is_authenticated %}
+                    <div class="header-wrapicon2">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h4><i class="fas fa-user" style="color: #fff"></i></h4>
+                        </span>
+                        <!-- <h3><i class="fab fa-opencart header-icon1 js-show-header-dropdown" style="color: #fff"></i></h3> -->
+                        <!-- Header cart noti -->
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12">
+                                <b>Welcome</b>
+                                <h4>{{user.first_name}} {{user.last_name}}</h4>
+                                <hr>
+                                <b>Your Email</b>
+                                <h6>{{user.email}}</h6>
+                                <!-- <a href="{% url 'Logout' %}">
+                                    <div class="d-flex justify-content-center mt-3 login_container">
+                                        <button class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 my-2 cart">Log Out</button>
+                                    </div>
+                                </a> -->
+                                <div class="header-cart-buttons mt-4">
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="{%url 'Logout'%}"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Logout
+                                            </button></a>
+                                    </div>
+                                    <div class="header-cart-wrapbtn">
+                                        <!-- Button -->
+                                        <a href="/shop/profile"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                                Profile
+                                            </button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="header-wrapicon2">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h4><i class="fas fa-user" style="color: #fff"></i></h4>
+                        </span>
+                        <div class="header-cart header-dropdown">
+                            <div class="col-md-12 ">
+                                <div class="user_card">
+                                    <div class="d-flex justify-content-center form_container">
+                                        <form method="post" action="/account/login/">{% csrf_token %}
+                                            <!-- <div class="justify-content-center float-center">Sign In</div> -->
+                                            <div class="input-group mb-3">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                                </div>
+                                                <input type="text" name="username" id="username" class="form-control input_user" required="required" placeholder="username">{%if error == "userpass"%}<span class="text-danger">{{msg}}</span>{% endif %}
+                                            </div>
+                                            <div class="input-group mb-2">
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                                </div>
+                                                <input type="password" name="password" class="form-control input_pass" id="password" required="required" placeholder="password">{%if error == "password"%}<span class="text-danger">{{msg}}</span>{% endif %}
+                                            </div>
+                                            <div class="form-group">
+                                                <div class="custom-control custom-checkbox">
+                                                    <input type="checkbox" class="custom-control-input" id="customControlInline">
+                                                    <label class="custom-control-label" for="customControlInline">Remember me</label>
+                                                </div>
+                                            </div>
+                                            <div class="d-flex justify-content-center mt-3 login_container">
+                                                <button type="submit" class="flex-c-m sizefull bg1 bo-rad-23 hov1 s-text1 py-2 my-2 cart">Sign In</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="mt-4">
+                                        <div class="d-flex justify-content-center links">
+                                            Don't have an account? <a href="{% url 'Register' %}" class="ml-2">Sign Up</a>
+                                        </div>
+                                        <div class="d-flex justify-content-center links">
+                                            <a href="#">Forgot your password?</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                    <span class="linedivide2"></span>
+                    <div class="header-wrapicon2">
+                        <span class="header-icon1 js-show-header-dropdown" alt="ICON">
+                            <h4><i class="fab fa-opencart" style="color: #fff"></i></h4>
+                        </span>
+                        <span class="header-icons-noti ">
+                            <h5 id="cart_mobile"></h5>
+                        </span>
+                        <div class="header-cart header-dropdown" id="pop_dropdown_mobile">
+                            <ul class="header-cart-wrapitem">
+                                <li class="header-cart-item" id="popcart_mobile">
+                                </li>
+                            </ul>
+                            <div id="total_amount_mobile" class="header-cart-total">
+                            </div>
+                            <div class="header-cart-buttons">
+                                <div class="header-cart-wrapbtn">
+                                    <!-- Button -->
+                                    <button id="clear_cart_mobile" class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                        Clear Cart
+                                    </button>
+                                </div>
+                                <div class="header-cart-wrapbtn">
+                                    <!-- Button -->
+                                    <a href="/shop/checkout"><button class="flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4">
+                                            Check Out
+                                        </button></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-show-menu-mobile hamburger hamburger--squeeze" style="color: #fff; padding: 10px">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- Menu Mobile -->
+        <div class="wrap-side-menu">
+            <nav class="side-menu" style="text-align: center;" aria-expanded="true">
+                <ul class="main-menu">
+                    <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                        <span class="topbar-child1">
+                            India's First Popular Online Shopping Site
+                        </span>
+                    </li>
+                    <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                        <span class="topbar-child1">
+                            <h6>Help</h6>
+                        </span>
+                        <div class="topbar-child2-mobile ml-5" style="margin-top: -20px">
+                            <div class="topbar-language rs1-select2">
+                                <select class="selection-1" name="time">
+                                    <option>INR</option>
+                                    <option>EUR</option>
+                                    <option>USD</option>
+                                </select>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="item-topbar-mobile p-l-20 p-t-8 p-b-8">
+                        
+                    </li> -->
+                    <li class="item-topbar-mobile p-l-10">
+                        <div class="topbar-social-mobile">
+                            <a href="#" class="topbar-social-item fab fa-facebook"></a>
+                            <a href="#" class="topbar-social-item fab fa-instagram"></a>
+                            <a href="#" class="topbar-social-item fab fa-pinterest-p"></a>
+                            <a href="#" class="topbar-social-item fab fa-snapchat-ghost"></a>
+                            <a href="#" class="topbar-social-item fab fa-youtube"></a>
+                            <a href="#" class="topbar-social-item fab fa-github"></a>
+                        </div>
+                    </li>
+                    <li class="item-menu-mobile">
+                        <a href="/shop">Home</a>
+                    </li>
+                    <li class="item-menu-mobile">
+                        <a href="product.html">Sale</a>
+                    </li>
+                    <li class="item-menu-mobile">
+                        <a href="/shop/tracker">Tracker</a>
+                    </li>
+                    <li class="item-menu-mobile">
+                        <a href="/shop/about">About</a>
+                    </li>
+                    <li class="item-menu-mobile">
+                        <a href="/shop/contact">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    {% block body%} {%endblock%}
+    <!-- Footer -->
+    <footer class="bg6 p-t-45 p-b-43 p-l-45 p-r-45">
+        <div class="flex-w p-b-90">
+            <div class="w-size6 p-t-30 p-l-15 p-r-15 respon3">
+                <h4 class="s-text12 p-b-30">
+                    GET IN TOUCH
+                </h4>
+                <div>
+                    <p class="s-text7 w-size27">
+                        Any questions? Let us know in store at 8th floor, 379 Hudson St, New York, NY 10018 or call us on (+1) 96 716 6879
+                    </p>
+                    <div class="flex-m p-t-30">
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-facebook"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-instagram"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-pinterest-p"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-snapchat-ghost"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-youtube"></a>
+                        <a href="#" class="fs-18 color1 p-r-20 fab fa-github"></a>
+                    </div>
+                </div>
+            </div>
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <h4 class="s-text12 p-b-30">
+                    Categories
+                </h4>
+                <ul>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Men
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Women
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Dresses
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Sunglasses
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <h4 class="s-text12 p-b-30">
+                    Links
+                </h4>
+                <ul>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Search
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            About Us
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Contact Us
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Returns
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-size7 p-t-30 p-l-15 p-r-15 respon4">
+                <h4 class="s-text12 p-b-30">
+                    Help
+                </h4>
+                <ul>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Track Order
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Returns
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            Shipping
+                        </a>
+                    </li>
+                    <li class="p-b-9">
+                        <a href="#" class="s-text7">
+                            FAQs
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="w-size8 p-t-30 p-l-15 p-r-15 respon3">
+                <h4 class="s-text12 p-b-30">
+                    Newsletter
+                </h4>
+                <form>
+                    <div class="effect1 w-size9">
+                        <input class="s-text7 bg6 w-full p-b-5" type="text" name="email" placeholder="email@example.com">
+                        <span class="effect1-line"></span>
+                    </div>
+                    <div class="w-size2 p-t-20">
+                        <!-- Button -->
+                        <button class="flex-c-m size2 bg4 bo-rad-23 hov1 m-text3 trans-0-4">
+                            Subscribe
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="t-center p-l-15 p-r-15">
+            <a href="#">
+                <img class="h-size2" src="{% static 'shop/images/icons/paypal.png' %}" alt="IMG-PAYPAL">
+            </a>
+            <a href="#">
+                <img class="h-size2" src="{% static 'shop/images/icons/visa.png' %}" alt="IMG-VISA">
+            </a>
+            <a href="#">
+                <img class="h-size2" src="{% static 'shop/images/icons/mastercard.png' %}" alt="IMG-MASTERCARD">
+            </a>
+            <a href="#">
+                <img class="h-size2" src="{% static 'shop/images/icons/express.png' %}" alt="IMG-EXPRESS">
+            </a>
+            <a href="#">
+                <img class="h-size2" src="{% static 'shop/images/icons/discover.png' %}" alt="IMG-DISCOVER">
+            </a>
+            <div class="t-center s-text8 p-t-20">
+                Copyright © 2019 All rights reserved. | This template is made with <i class="fas fa-heart" aria-hidden="true"></i> by <a href="https://shopfesto.com" target="_blank">Shop Festo</a>
+            </div>
+        </div>
+    </footer>
+    <!-- Back to top -->
+    <div class="btn-back-to-top bg0-hov" id="myBtn">
+        <span class="symbol-btn-back-to-top">
+            <i class="fa fa-angle-double-up" aria-hidden="true" style="color: #fff"></i>
+        </span>
+    </div>
+    <!-- Container Selection1 -->
+    <div id="dropDownSelect1"></div>
+    <!--===============================================================================================-->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/bootstrap/js/popper.js' %}"></script>
+    <script type="text/javascript" src="{%static 'shop/vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/select2/select2.min.js' %}"></script>
+    <script type="text/javascript">
+    $(".selection-1").select2({
+        minimumResultsForSearch: 20,
+        dropdownParent: $('#dropDownSelect1')
+    });
+    </script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/slick/slick.min.js' %}"></script>
+    <script type="text/javascript" src="{%static 'shop/js/slick-custom.js' %}"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--  Recaptcha-->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/lightbox2/js/lightbox.min.js' %}"></script>
+    <!--===============================================================================================-->
+    <script type="text/javascript" src="{%static 'shop/vendor/sweetalert/sweetalert.min.js' %}"></script>
+    <script type="text/javascript">
+    $('.block2-btn-addcart').each(function() {
+        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+        $(this).on('click', function() {
+            swal(nameProduct, "is added to cart !", "success");
+        });
+    });
+
+    $('.block2-btn-addwishlist').each(function() {
+        var nameProduct = $(this).parent().parent().parent().find('.block2-name').html();
+        $(this).on('click', function() {
+            swal(nameProduct, "is added to wishlist !", "success");
+        });
+    });
+    $('#search_btn').click(function() {
+        $('#search').focus();
+    });
+    $('#search_btn_mobile').click(function() {
+        $('#search_mobile').focus();
+    });
+    </script>
+    <!-- <script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+
+    $('.cart').click(function() {
+        var idstr = this.id.toString();
+        console.log(idstr);
+        if (cart[idstr] != undefined) {
+            cart[idstr] = cart[idstr] + 1;
+        } else {
+            cart[idstr] = 1;
+        }
+        console.log(cart);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    });
+    </script> -->
+    <!--===============================================================================================-->
+    <script src="{%static 'shop/js/main.js' %}"></script>
+    {% block js %}
+    {% endblock %}
+</body>
+
+</html>
